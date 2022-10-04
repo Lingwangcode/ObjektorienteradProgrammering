@@ -9,7 +9,7 @@ public class Huvudklass {
 
         Palmer palmenLaura = new Palmer("laura", 5);
         Palmer palmenPutte = new Palmer("putte",1);
-        KöttätandeVäxter meatloaf = new KöttätandeVäxter();
+        KöttätandeVäxter meatloaf = new KöttätandeVäxter(0.7);
 
         Växter kaktusenIgge = new Kaktusar(); //Polymofism
 
