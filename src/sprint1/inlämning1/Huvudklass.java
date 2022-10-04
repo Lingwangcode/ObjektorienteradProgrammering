@@ -40,36 +40,6 @@ public class Huvudklass {
 
 
     }
-   /* public void vätskBehöv(){
-        while(true){
-            String svar = JOptionPane.showInputDialog(null,"Vilken växt ska få vätska?");
-            if (svar == null || svar.isBlank()) {
-
-                System.out.println("Programmet avslutas");
-                break;
-            }
-
-            if(svar.trim().toLowerCase().equals(växterList.get(0).getNamn())){
-                växterList.get(0).vätskInfo();
-            }
-            else if (svar.trim().toLowerCase().equals(växterList.get(1).getNamn())){
-                växterList.get(1).vätskInfo();
-            }
-            else if (svar.trim().toLowerCase().equals(växterList.get(2).getNamn())){
-                växterList.get(2).vätskInfo();
-            }
-            else if (svar.trim().toLowerCase().equals(växterList.get(3).getNamn())){
-                växterList.get(3).vätskInfo();
-            }
-            else
-                System.out.println("Fel växtnamn, försök igen!");
-
-        }
-
-    }
-
-    */
-
 
     public static void main(String[] args) {
         Huvudklass hv = new Huvudklass();
