@@ -5,25 +5,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Huvudklass {
-
-    List<Växter>växterList = new ArrayList<>();
     public Huvudklass(){
 
         Palmer palmenLaura = new Palmer("laura", 5);
         Palmer palmenPutte = new Palmer("putte",1);
         KöttätandeVäxter meatloaf = new KöttätandeVäxter();
 
-        Växter kaktusenIgge = new Kaktusar();
+        Växter kaktusenIgge = new Kaktusar(); //Polymofism
 
-        växterList.add(palmenLaura);
-        växterList.add(palmenPutte);
-        växterList.add(meatloaf);
-        växterList.add(kaktusenIgge);
+        while(true){
+            String svar = JOptionPane.showInputDialog(null,"Vilken växt ska få vätska?");
+            if (svar == null || svar.isBlank()) {
 
-        vätskBehöv();
+                System.out.println("Programmet avslutas");
+                break;
+            }
+
+            if(svar.trim().toLowerCase().equals(palmenLaura.getNamn())){
+                palmenLaura.vätskInfo();
+            }
+            else if (svar.trim().toLowerCase().equals(palmenPutte.getNamn())){
+                palmenPutte.vätskInfo();
+            }
+            else if (svar.trim().toLowerCase().equals(meatloaf.getNamn())){
+                meatloaf.vätskInfo();
+            }
+            else if (svar.trim().toLowerCase().equals(kaktusenIgge.getNamn())){
+                kaktusenIgge.vätskInfo();
+            }
+            else
+                System.out.println("Fel växtnamn, försök igen!");
+
+        }
+
 
     }
-    public void vätskBehöv(){
+   /* public void vätskBehöv(){
         while(true){
             String svar = JOptionPane.showInputDialog(null,"Vilken växt ska få vätska?");
             if (svar == null || svar.isBlank()) {
@@ -50,6 +67,8 @@ public class Huvudklass {
         }
 
     }
+
+    */
 
 
     public static void main(String[] args) {
