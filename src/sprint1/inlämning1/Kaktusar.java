@@ -2,15 +2,12 @@ package sprint1.inlämning1;
 
 public class Kaktusar extends Växter{
 
-    final double vätskBehov = 0.2;
-
-
     public Kaktusar() {
-        super(2, "igge", Vätsketyp.MINERALVATTEN);
+        super(2, "igge", Vätsketyp.MINERALVATTEN,0.2 );
     }
 
     @Override
     public void vätskInfo() {
-        System.out.println(getNamn() + " behöver " + vätskBehov + " liter " + getVätsketyp() +" per dag.");
+        System.out.println(getNamn() + " behöver " + getMängdVätska() + " liter " + getVätsketyp() +" per dag.");
     }
 }
