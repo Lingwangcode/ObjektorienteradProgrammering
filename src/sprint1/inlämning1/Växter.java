@@ -3,7 +3,6 @@ package sprint1.inlämning1;
 public abstract class Växter implements Utskrift{
     private String namn;
     private double längd;
-
     private double vätskaMängd;
     private Vätsketyp vätsketyp; //Enum
 
@@ -18,7 +17,7 @@ public abstract class Växter implements Utskrift{
         return vätsketyp;
     }
 
-    public double getMängdVätska() {
+    public double getVätskaMängd() {
         return vätskaMängd;
     }
 
@@ -32,6 +31,6 @@ public abstract class Växter implements Utskrift{
 
     @Override //Interface
     public void vätskInfo() {
-
+        System.out.println("Default vätskInfo");
     }
 }

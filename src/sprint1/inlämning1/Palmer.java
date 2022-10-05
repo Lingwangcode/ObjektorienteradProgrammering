@@ -7,12 +7,10 @@ public class Palmer extends Växter{
 
     }
 
-
-
-    @Override //Interface
+    @Override //interface
     public void vätskInfo() {
 
-        System.out.println(getNamn() + " behöver " + getMängdVätska() + " liter " + getVätsketyp() + " per dag.");
+        System.out.println(getNamn() + " behöver " + getVätskaMängd() + " liter " + getVätsketyp() + " per dag.");
     }
 
 

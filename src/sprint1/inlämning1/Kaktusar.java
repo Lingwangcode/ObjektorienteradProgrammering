@@ -6,9 +6,8 @@ public class Kaktusar extends Växter{
         super(2, "igge", Vätsketyp.MINERALVATTEN,0.2 );
     }
 
-
     @Override //Interface
     public void vätskInfo() {
-        System.out.println(getNamn() + " behöver " + getMängdVätska() + " liter " + getVätsketyp() +" per dag.");
+        System.out.println(getNamn() + " behöver " + getVätskaMängd() + " liter " + getVätsketyp() +" per dag.");
     }
 }

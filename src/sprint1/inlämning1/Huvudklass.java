@@ -19,7 +19,6 @@ public class Huvudklass {
                 System.out.println("Programmet avslutas");
                 break;
             }
-
             if(svar.toLowerCase().contains(palmenLaura.getNamn())){
                 palmenLaura.vätskInfo();
             }
@@ -36,8 +35,6 @@ public class Huvudklass {
                 System.out.println("Fel växtnamn, försök igen!");
 
         }
-
-
     }
 
     public static void main(String[] args) {
