@@ -17,9 +17,7 @@ public abstract class Växter implements Utskrift{
         return vätsketyp;
     }
 
-    public double getVätskaMängd() {
-        return vätskaMängd;
-    }
+    public double getVätskaMängd() { return vätskaMängd; }
 
     public String getNamn() {
         return namn;

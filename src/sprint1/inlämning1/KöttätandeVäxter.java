@@ -8,6 +8,7 @@ public class KöttätandeVäxter extends Växter{
 
     @Override //Interface
     public void vätskInfo() {
+
         System.out.println(getNamn() + " behöver " + getVätskaMängd() + " liter " + getVätsketyp() + " per dag.");
 
     }

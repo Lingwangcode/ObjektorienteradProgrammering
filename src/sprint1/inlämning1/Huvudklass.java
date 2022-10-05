@@ -13,9 +13,9 @@ public class Huvudklass {
         Kaktusar kaktusenIgge = new Kaktusar();
 
         while(true){
+
             String svar = JOptionPane.showInputDialog(null,"Vilken växt ska få vätska?");
             if (svar == null || svar.isBlank()) {
-
                 System.out.println("Programmet avslutas");
                 break;
             }
