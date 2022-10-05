@@ -8,10 +8,9 @@ public class Huvudklass {
     public Huvudklass(){
 
         Palmer palmenLaura = new Palmer("laura", 5);
-        Palmer palmenPutte = new Palmer("putte",1);
+        Växter palmenPutte = new Palmer("putte",1); //Polymofism
         KöttätandeVäxter meatloaf = new KöttätandeVäxter(0.7);
-
-        Växter kaktusenIgge = new Kaktusar(); //Polymofism
+        Kaktusar kaktusenIgge = new Kaktusar();
 
         while(true){
             String svar = JOptionPane.showInputDialog(null,"Vilken växt ska få vätska?");
@@ -21,16 +20,16 @@ public class Huvudklass {
                 break;
             }
 
-            if(svar.trim().toLowerCase().equals(palmenLaura.getNamn())){
+            if(svar.toLowerCase().contains(palmenLaura.getNamn())){
                 palmenLaura.vätskInfo();
             }
-            else if (svar.trim().toLowerCase().equals(palmenPutte.getNamn())){
+            else if(svar.toLowerCase().contains(palmenPutte.getNamn())){
                 palmenPutte.vätskInfo();
             }
-            else if (svar.trim().toLowerCase().equals(meatloaf.getNamn())){
+            else if (svar.toLowerCase().contains(meatloaf.getNamn())){
                 meatloaf.vätskInfo();
             }
-            else if (svar.trim().toLowerCase().equals(kaktusenIgge.getNamn())){
+            else if (svar.toLowerCase().contains(kaktusenIgge.getNamn())){
                 kaktusenIgge.vätskInfo();
             }
             else

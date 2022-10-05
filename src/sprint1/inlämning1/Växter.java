@@ -7,9 +7,6 @@ public abstract class Växter implements Utskrift{
     private double vätskaMängd;
     private Vätsketyp vätsketyp; //Enum
 
-    public Växter(double längd){
-        this.längd = längd;
-    };
     public Växter(double längd, String namn, Vätsketyp vätsketyp, double vätskaMängd) {
         this.längd = längd;
         this.namn = namn.trim().toLowerCase();
@@ -33,7 +30,7 @@ public abstract class Växter implements Utskrift{
         return längd;
     }
 
-    @Override
+    @Override //Interface
     public void vätskInfo() {
 
     }
