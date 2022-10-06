@@ -9,7 +9,7 @@ public class Kaktusar extends Växter{
     }
 
     @Override //Interface
-    public void vätskInfo() {
-        System.out.println(getNamn() + " behöver " + getVätskaMängd() + " liter " + getVätsketyp() +" per dag.");
+    public void vätskeInfo() {
+        System.out.println(getNamn() + " behöver " + getVätskeMängd() + " liter " + getVätsketyp() +" per dag.");
     }
 }

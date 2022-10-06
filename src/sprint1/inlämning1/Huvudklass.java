@@ -20,16 +20,16 @@ public class Huvudklass {
                 break;
             }
             if(svar.toLowerCase().contains(palmenLaura.getNamn())){
-                palmenLaura.vätskInfo();
+                palmenLaura.vätskeInfo();
             }
             else if(svar.toLowerCase().contains(palmenPutte.getNamn())){
-                palmenPutte.vätskInfo();
+                palmenPutte.vätskeInfo();
             }
             else if (svar.toLowerCase().contains(meatloaf.getNamn())){
-                meatloaf.vätskInfo();
+                meatloaf.vätskeInfo();
             }
             else if (svar.toLowerCase().contains(kaktusenIgge.getNamn())){
-                kaktusenIgge.vätskInfo();
+                kaktusenIgge.vätskeInfo();
             }
             else
                 System.out.println("Fel växtnamn, försök igen!");
