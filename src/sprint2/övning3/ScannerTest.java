@@ -6,10 +6,11 @@ public class ScannerTest {
 
     public ScannerTest(){
         Scanner scanner = new Scanner(System.in);
-        String s = "";
+        //String s = "";
+        StringBuilder s = new StringBuilder();
         while(true){
             if (scanner.hasNextLine()){
-                s = scanner.nextLine();
+                s.append(scanner.nextLine());
                 System.out.println("Du skrev: " + s);
             }
         }

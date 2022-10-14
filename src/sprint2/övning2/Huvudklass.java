@@ -1,12 +1,46 @@
 package sprint2.övning2;
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class Huvudklass {
     public Huvudklass(){
         Car car = new Car();
+        Scanner scan = new Scanner(System.in);
+        String temp;
+        double svar;
 
-        try{
+        try {
+            while (true) {
+                System.out.println("Dagens mätarställning: ");
+                if (scan.hasNextLine()) {
+                    temp = scan.nextLine();
+                    svar = Double.parseDouble(temp);
+                    car.setDagensMätarställning(svar);
+                }
+                System.out.println("Förra årets mätarställning:");
+                if (scan.hasNextLine()) {
+                    temp = scan.nextLine();
+                    svar = Double.parseDouble(temp);
+                    car.setFörraÅretsMätarställning(svar);
+                }
+                System.out.println("Antal liter bensin som förbrukas per år: ");
+                if (scan.hasNextLine()) {
+                    temp = scan.nextLine();
+                    svar = Double.parseDouble(temp);
+                    car.setBensinFörbrukningPerÅr(svar);
+                }
+
+                System.out.println("Antal körda mil: " + car.getAntalMil() + "\nAntal liter besin: " +
+                        car.getBensinFörbrukningPerÅr() + "\nFörbrukning per mil: " + car.getBensinFörbrukning());
+
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+
+        }
+
+       /* try{
 
             while (true) {
 
@@ -27,6 +61,8 @@ public class Huvudklass {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
+        */
 
 
     }
