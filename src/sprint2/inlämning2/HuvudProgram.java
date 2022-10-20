@@ -13,7 +13,6 @@ public class HuvudProgram {
 
     public HuvudProgram() throws IOException {
 
-
         f.readCustomers();
         f.getMember();
         f.checkMembership();
@@ -22,7 +21,9 @@ public class HuvudProgram {
 
     public static void main(String[] args) {
         try {
+
             HuvudProgram h = new HuvudProgram();
+
         }
         catch (IOException e){
             System.out.println("Det gick inte att läsa filen");
@@ -30,6 +31,7 @@ public class HuvudProgram {
         }
         catch (IndexOutOfBoundsException e){
             System.out.println("Fel med innehållet i filen");
+            e.printStackTrace();
         }
 
     }

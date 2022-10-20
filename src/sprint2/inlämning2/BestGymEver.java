@@ -26,7 +26,7 @@ public class BestGymEver {
     final Path write = Paths.get("test/sprint2/inlämning2/customers1.txt");
     private List<Customer> memberList = new ArrayList<>(); //Sparar giltiga medlemar
     private List<Customer> memberBefore = new ArrayList<>();// Sparar medlemar vars medlemskap har gått ut.
-    private List<Customer> customerList = new ArrayList<>();// Alla medlemar som finns i customerfilen.
+
 
     public boolean isDateWithinAYear(Customer m) throws DateTimeParseException{ //kollar ifall datum passerat 1 år.
 
@@ -38,15 +38,14 @@ public class BestGymEver {
 
     }
 
-    public void readCustomers() throws IOException, IndexOutOfBoundsException { //Läser customersfil, sparar i customerList
+    public List<Customer> readCustomers() throws IOException, IndexOutOfBoundsException { //Läser customersfil, sparar i customerList
 
-        String firstLine = "";
-        String secondLine = "";
+        List <Customer> customerList = new ArrayList<>();
 
         try(Scanner scan = new Scanner(p)){
             while (scan.hasNextLine()){
-                firstLine = scan.nextLine();
-                secondLine = scan.nextLine();
+                String firstLine = scan.nextLine();
+                String secondLine = scan.nextLine();
 
                 String[] firstrow = firstLine.split(",");
 
@@ -55,12 +54,13 @@ public class BestGymEver {
 
             }
         }
+        return customerList;
     }
 
-    public void getMember(){ // går igenom customerlista, delar dem i två listor.
+    public void getMember() throws IOException { // går igenom customerlista, delar dem i två listor.
 
         try {
-            for (Customer m : customerList) {
+            for (Customer m : readCustomers()) {
 
                 if (isDateWithinAYear(m)) {
                     memberList.add(m);
@@ -76,7 +76,7 @@ public class BestGymEver {
         }
     }
 
-    public void checkMembership(){
+    public void checkMembership() throws IOException {
 
             String svar = JOptionPane.showInputDialog(null, "Vänligen skriv in ditt för- och efternamn " +
                     "eller personnummer: ");
@@ -87,9 +87,10 @@ public class BestGymEver {
 
             String input = svar.trim().toLowerCase();
 
-            for (int i = 0; i < customerList.size(); i++) {
 
-                if (input.equals(customerList.get(i).getName()) || input.equals(customerList.get(i).getSocialSecurityNo())) {
+            for (int i = 0; i < readCustomers().size(); i++) {
+
+                if (input.equals(readCustomers().get(i).getName()) || input.equals(readCustomers().get(i).getSocialSecurityNo())) {
 
                     for (int j = 0; j < memberList.size(); j++) {
 
@@ -125,11 +126,13 @@ public class BestGymEver {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(write.toFile(), true))){
 
                 LocalDate ld = LocalDate.now();
-                bw.write(m.getName() + ", " + m.getSocialSecurityNo() + " \nBesökt datum: " + ld + "\n\n");
+                bw.write(m.getName() + ", " + m.getSocialSecurityNo() + " \nBesökt datum: " + ld + "\n");
 
         }
         catch (IOException e){
             e.printStackTrace();
         }
     }
+
+
 }
