@@ -3,40 +3,34 @@ package sprint2.inlämning2;
 import sprint1.inlämning1.Huvudklass;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class HuvudProgram {
 
-    Customer c = new Customer();
-    FilterUtil f = new FilterUtil();
+    BestGymEver f = new BestGymEver();
 
-    final Path p = Paths.get("test/sprint2/inlämning2/customers.txt");
-    final Path write = Paths.get("test/sprint2/inlämning2/customers1.txt");
+    public HuvudProgram() throws IOException {
 
-    public HuvudProgram(){
 
-        f.readCustomers(p);
+        f.readCustomers();
         f.getMember();
-
-        while (true) {
-
-            String svar = JOptionPane.showInputDialog(null, "Vänligen skriv in ditt för- och efternamn " +
-                    "eller personnummer: ");
-
-            if (svar == null || svar.isBlank()) {
-                break;
-            }
-
-            String input = svar.trim().toLowerCase();
-
-            f.checkMembership(write, input);
-
-        }
+        f.checkMembership();
 
     }
 
     public static void main(String[] args) {
-        HuvudProgram h = new HuvudProgram();
+        try {
+            HuvudProgram h = new HuvudProgram();
+        }
+        catch (IOException e){
+            System.out.println("Det gick inte att läsa filen");
+            e.printStackTrace();
+        }
+        catch (IndexOutOfBoundsException e){
+            System.out.println("Fel med innehållet i filen");
+        }
+
     }
 }

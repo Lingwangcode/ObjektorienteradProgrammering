@@ -5,23 +5,13 @@ import java.util.List;
 public class Customer {
 
     private String name;
-    private String personNumber;
+    private String socialSecurityNo;
     private String menbershipDate;
 
 
-    public void setName(String name) {
+    public Customer(String name, String socialSecurityNo, String menbershipDate) {
         this.name = name;
-    }
-
-    public void setPersonNumber(String personNumber) {
-        this.personNumber = personNumber;
-    }
-
-    public Customer (){};
-
-    public Customer(String name, String personNumber, String menbershipDate) {
-        this.name = name;
-        this.personNumber = personNumber;
+        this.socialSecurityNo = socialSecurityNo;
         this.menbershipDate = menbershipDate;
     }
 
@@ -29,8 +19,8 @@ public class Customer {
         return name;
     }
 
-    public String getPersonNumber() {
-        return personNumber;
+    public String getSocialSecurityNo() {
+        return socialSecurityNo;
     }
 
     public String getMenbershipDate() {
