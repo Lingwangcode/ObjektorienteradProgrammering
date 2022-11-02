@@ -9,6 +9,7 @@ public class Bildvisare extends JFrame implements ActionListener {
 
     //test branch
     //changes
+    //changes
     ImageIcon i = new ImageIcon("C:\\Users\\lings\\OneDrive\\Desktop\\javamapp\\Natur bild2.jpg");
     ImageIcon i2 = new ImageIcon("C:\\Users\\lings\\OneDrive\\Desktop\\javamapp\\Natur bild4.jpg");
     JLabel jl1 = new JLabel(i);
