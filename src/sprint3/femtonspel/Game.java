@@ -12,7 +12,6 @@ public class Game extends JFrame implements ActionListener{
 
     JPanel buttonPanel = new JPanel();
     JButton[][] buttons = new JButton[4][4];
-    int[][] buttonLabel = new int[4][4];
     int r, c;
     JPanel panel = new JPanel();
     JButton nyttSpel = new JButton("Nytt spel");
@@ -55,8 +54,9 @@ public class Game extends JFrame implements ActionListener{
 
     }
 
-    public void shuffle() { //sätt nummer på knapparna
+    public void shuffle() { //sätter text på knapparna
         try {
+
             boolean[] isUsed = new boolean[16];
 
             for (int i = 0; i < buttons.length; i++) {
@@ -67,10 +67,14 @@ public class Game extends JFrame implements ActionListener{
                     while (isUsed[randomNumber]) {
                         randomNumber = (int) (Math.random() * 16);
                     }
+
                     isUsed[randomNumber] = true;
+
                     if (randomNumber != 0) {
                         buttons[i][j].setText("" + randomNumber);
+
                     } else {
+
                         buttons[i][j].setText("");
                         r = i;
                         c = j;
@@ -87,6 +91,7 @@ public class Game extends JFrame implements ActionListener{
         try {
 
             List<Integer> buttonNr = new ArrayList<>();
+            int[][] buttonLabel = new int[4][4];
             String buttonText = "";
 
             for (int i = 0; i < buttons.length; i++) {
@@ -119,6 +124,15 @@ public class Game extends JFrame implements ActionListener{
         }
     }
 
+    public boolean isListSorted(List<Integer> buttonNr){ // kollar ifall numren på knapparna är sorterade
+
+        if ( buttonNr.stream().sorted().collect(Collectors.toList()).equals(buttonNr))
+            return true;
+        else
+            return false;
+
+    }
+
     public void sort() { //Sorterar numren på knapparna i rätt ordning
         try{
 
@@ -133,19 +147,10 @@ public class Game extends JFrame implements ActionListener{
             buttons[buttons.length-1][buttons.length-1].setText("");
             r = buttons.length - 1;
             c = buttons.length - 1;
+
         }catch (IndexOutOfBoundsException e){
             e.printStackTrace();
         }
-
-
-    }
-    public boolean isListSorted(List<Integer> buttonNr){ // kollar ifall numren på knapparna är sorterade
-
-        if ( buttonNr.stream().sorted().collect(Collectors.toList()).equals(buttonNr))
-            return true;
-        else
-            return false;
-
     }
 
    @Override
@@ -159,10 +164,13 @@ public class Game extends JFrame implements ActionListener{
 
                     if (i - 1 == r && j == c || i + 1 == r && j == c ||
                             i == r && j - 1 == c || i == r && j + 1 == c){
+
+                        String temp = buttons[r][c].getText();
                         buttons[r][c].setText(buttons[i][j].getText());
-                        buttons[i][j].setText("");
+                        buttons[i][j].setText(temp);
                         r = i;
                         c = j;
+
                     }
                 }
             }
